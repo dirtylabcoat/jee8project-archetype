@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${groupId}.${artifactId};
+package ${package};
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -10,3 +10,4 @@ import javax.ws.rs.core.Application;
 public class JAXRSConfiguration extends Application {
 
 }
+
