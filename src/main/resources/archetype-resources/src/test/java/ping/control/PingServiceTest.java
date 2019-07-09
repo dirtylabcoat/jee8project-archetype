@@ -7,22 +7,29 @@ import ${package}.ping.entity.Ping;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import static org.mockito.Mockito.when;
+import org.mockito.MockitoAnnotations;
+import org.mockito.runners.MockitoJUnitRunner;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class PingServiceTest {
 
-    private static final String PING_MSG = "ping";
+    private static final String PING_MSG = "PONG";
 
-    private PingService pingService;
+    @Mock
+    private PingService mockPingService;
 
     @Before
     public void setUp() {
-        this.pingService = new PingService();
+        MockitoAnnotations.initMocks(this);
+        when(mockPingService.getPing()).thenReturn(new Ping(PING_MSG));
     }
 
     @Test
     public void testPing() {
-        Ping ping = this.pingService.getPing();
+        Ping ping = this.mockPingService.getPing();
         assertEquals(ping.getMessage(), PING_MSG);
     }
 
