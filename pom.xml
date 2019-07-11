@@ -5,7 +5,7 @@
 
     <groupId>org.dirtylabcoat</groupId>
     <artifactId>jee8project-archetype</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>maven-archetype</packaging>
     <properties>
         <encoding>UTF-8</encoding>
